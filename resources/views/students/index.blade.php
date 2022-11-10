@@ -1,4 +1,4 @@
-@extends('templates.default')
+@extends('tamplates.default')
 @section('content')
 <div class="card">
 <div class="card-body">
@@ -19,6 +19,7 @@
 <td>{{ $student->name }}</td>
 <td>{{ $student->phone_number }}</td>
 <td>{{ $student->address }}</td>
+<td><button type="button" class="btn btn-success">Success</button> <button type="button" class="btn btn-danger">Danger</button></td>
 </tr>
 @endforeach
 </tbody>

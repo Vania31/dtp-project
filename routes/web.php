@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentControllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/test', 'templates.default');
+Route::view('/test', 'layouts.App');
 Route::view('/user','user');
+Route::get('students', [StudentControllers::class, 'index'])->name('students.index');
+Route::get('students/create', [StudentControllers::class, 'create'])->name('students.create');
+Route::post('students', [StudentControllers::class, 'store'])->name('students.store');
+
+
 Route::get('/dashbord', function (){
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
